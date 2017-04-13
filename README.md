@@ -1,7 +1,7 @@
 #**Behavioral Cloning** 
 
 
-###The goals / steps of this project are the following:
+### The goals / steps of this project are the following:
 - Use the simulator to collect data of good driving behavior
 - Build, a convolution neural network in Keras that predicts steering angles from images
 - Train and validate the model with a training and validation set
@@ -24,9 +24,9 @@
 Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.
 
 ---
-###Files Submitted & Code Quality
+### Files Submitted & Code Quality
 
-####1. Submission includes all required files and can be used to run the simulator in autonomous mode
+#### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
 - model.py containing the script to create and train the model
@@ -36,19 +36,19 @@ My project includes the following files:
 - video_track2.mp4 showing a partial lap around track 2
 - writeup_report.md  summarizing the results
 
-####2. Submission includes functional code
+#### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
 ```sh
 python drive.py model.h5
 ```
 
-####3. Submission code is usable and readable
+#### 3. Submission code is usable and readable
 
 The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
-####1. An appropriate model architecture has been employed
+#### 1. An appropriate model architecture has been employed
 
 My model consists of a convolution neural network that followed the NVIDIA example. 
 
@@ -66,15 +66,15 @@ Fully connected layer output with 10 output nodes
 Fully connected layer with final output node
 (model.py lines 65 - 75)
 
-####2. Attempts to reduce overfitting in the model
+#### 2. Attempts to reduce overfitting in the model
 
 To prevent overfitting, training was limited to two epochs. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
-####3. Model parameter tuning
+#### 3. Model parameter tuning
 
 A correction factor of 0.9 and a training length of 2 epochs were selected based on track performance.  Smaller correction factors faild to keep the car on the track. Larger correction factors caused chatter.  Dropout was found to be harmful to performance, as was adding RELU activations after the fully connected layers.
 
-####4. Creation of the Training Set & Training Process
+#### 4. Creation of the Training Set & Training Process
 
 Training data was chosen to keep the vehicle driving on the road. I used four laps of center lane driving on track one.  The left and right images were used to create corrective actions.
 
@@ -108,7 +108,7 @@ I finally randomly shuffled the data set and put 5% of the data into a validatio
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was two as more epochs consistantly failed to impove the validation error. I used an adam optimizer so that manually training the learning rate wasn't necessary.
 
-####5. Results
+#### 5. Results
 The car successfully navigated track 1. Video of this is given in the video.mp4 file.  This file has been uploaded to YouTube and can be viewed by clicking on the below image.
 
 [![Track 1][image7]](https://youtu.be/vhzxwS0nGf0)
