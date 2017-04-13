@@ -1,4 +1,4 @@
-#**Behavioral Cloning** 
+# **Behavioral Cloning** 
 
 
 ### The goals / steps of this project are the following:
@@ -111,12 +111,12 @@ I used this training data for training the model. The validation set helped dete
 #### 5. Results
 The car successfully navigated track 1. Video of this is given in the video.mp4 file.  This file has been uploaded to YouTube and can be viewed by clicking on the below image.
 
-[![Track 1][image7]](https://youtu.be/vhzxwS0nGf0)
+[![Track 1][image7]](https://youtu.be/vhzxwS0nGf0) 
 *click image to view track 1 video*
 
 Track 2 was much more challanging, even for a human driver. It was found that staying in the center of the track caused performance on track 1 to suffer as the edges of curves were mistaken for the center dashed lines on track 2. However, using only data from track 1, some success was achieved on track 2.  This is shown in the video_track2.mp4 file which has been uploaded to YouTube and is available by clicking on the below image.
 
-[![Track 2][image6]](https://youtu.be/EIk6GieTMG8)
+[![Track 2][image6]](https://youtu.be/EIk6GieTMG8) 
 *click image to view track 2 video*
 
 
