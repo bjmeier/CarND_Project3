@@ -84,26 +84,25 @@ For the set of training data and selected models, dropout was found to be harmfu
 Training data was chosen to keep the vehicle driving on the road. I used four laps of center lane driving on track one.  The mouse input was used to keep the angle inputs smooth.  The left and right images were used to create corrective actions.
 
 ![lalt text][image1]<br>
-*Left image*
+*left camera image*
 
 ![alt text][image2]<br>
-*Center image*
-
+*center camera image*
 
 ![alt text][image3]<br>
-*Right image*
+*right camera image*
 
 
 To augment the data set, I also flipped images and angles thinking that this would add more data and prevent any left or right bias.  For example, here is a flipped version of the above center image:
 
 ![alt text][image4]<br>
-*Flipped center image*
+*Flipped center camera image*
 
 
 After the collection process, I had 69,594 number of data points. To avoid showing extraneous information, the top 50 and bottom 20 pixels were removed. Here is the cropped version of the above center image:
 
 ![alt text][image5]<br>
-*Cropped center image*
+*cropped center camera image*
 
 
 I then preprocessed this data by dividing each pixel value by 255 and then subtracting 0.5 for the result to normalize the data.
@@ -117,10 +116,10 @@ I used this training data for training the model. The validation set helped dete
 The car successfully navigated track 1. Video of this is given in the video.mp4 file.  This file has been uploaded to YouTube and can be viewed by clicking on the below image.
 
 [![Track 1][image7]](https://youtu.be/vhzxwS0nGf0)<br>
-*Click image to view track 1 video*
+*click image to view track 1 video*
 
 Track 2 was much more challenging, even for a human driver. It was found that staying in the center of the track caused performance on track 1 to suffer as the edges of curves were mistaken for the center dashed lines on track 2. However, using only data from track 1, some success was achieved on track 2.  This is shown in the video_track2.mp4 file which has been uploaded to YouTube and is available by clicking on the below image.
 
 [![Track 2][image6]](https://youtu.be/EIk6GieTMG8)<br>
-*Click image to view track 2 video*
+*click image to view track 2 video*
 
