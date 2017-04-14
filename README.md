@@ -54,6 +54,7 @@ My model consists of a convolution neural network that followed the [NVIDIA exam
 
 Top 50 pixels and bottom 20 pixels are cropped from 160 x 320 images (model.py line 63)<br>
 Data is normalized by dividing each pixel by 255 and then subtracting 0.5 (model.py line 64)<br>
+
 5 x 5 convolution with a 24 layer depth and a RELU activation<br>
 5 x 5 convolution with a 36 layer depth and a RELU activation<br>
 5 x 5 convolution with a 48 layer depth and a RELU activation<br>
@@ -64,7 +65,6 @@ Fully connected layer with 100 output nodes<br>
 Fully conected layer output with 50 output nodes<br>
 Fully connected layer output with 10 output nodes<br>
 Fully connected layer with final output node<br>
-
 (model.py lines 65 - 75)
 
 #### 2. Attempts to reduce overfitting in the model
