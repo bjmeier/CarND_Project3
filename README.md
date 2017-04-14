@@ -110,7 +110,7 @@ I then preprocessed this data by dividing each pixel value by 255 and then subtr
 
 I finally randomly shuffled the data set and put 5% of the data into a validation set. 
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. As discussed abobve, the ideal number of epochs is two as additional training did not improve the validation error. I used an adam optimizer so that manually training the learning rate wasn't necessary.  The test data set was replaced by on track performance.  This performance is demonstrated in the below videos.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. As discussed abobve, the ideal number of epochs is 2 as additional training did not improve the validation error. I used an adam optimizer so that manually training the learning rate wasn't necessary.  The test data set was replaced by on track performance.  This performance is demonstrated in the below videos.
 
 #### 5. Results
 The car successfully navigated track 1. Video of this is given in the video.mp4 file.  This file has been uploaded to YouTube and can be viewed by clicking on the below image.
