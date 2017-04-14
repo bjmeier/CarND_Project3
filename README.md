@@ -94,14 +94,14 @@ For the set of training data and selected models, dropout was found to be harmfu
 
 Training data was chosen to keep the vehicle driving on the road. I used four laps of center lane driving on track one.  The mouse input was used to keep the angle inputs smooth.  The left and right images were used to create corrective actions.
 
-![lalt text][image1] 
+![lalt text][image1]<br>
 *left image*
 
-![alt text][image2] 
+![alt text][image2]<br>
 *center image*
 
 
-![alt text][image3] 
+![alt text][image3]<br>
 *right image*
 
 
@@ -128,8 +128,8 @@ I used this training data for training the model. The validation set helped dete
 The car successfully navigated track 1. Video of this is given in the video.mp4 file.  This file has been uploaded to YouTube and can be viewed by clicking on the below image.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=vhzxwS0nGf0
-" target="_blank"><img src="http://img.youtube.com/vi/vhzxwS0nGf0E/0.jpg" 
-alt="track 1 viceo" width="240" height="180" border="10" /></a>
+" target="_blank"><img src="http://img.youtube.com/vi/vhzxwS0nGf0/0.jpg" 
+alt="track 1 video" width="240" height="180" border="10" /></a>
 
 [![Track 1][image7]](https://youtu.be/vhzxwS0nGf0) 
 *click image to view track 1 video*
