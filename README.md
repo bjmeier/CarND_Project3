@@ -14,10 +14,10 @@
 [image1]: ./report/left.jpg "Left Camera"
 [image2]: ./report/center.jpg "Center Camera"
 [image3]: ./report/right.jpg "Right Camera"
-[image4]:  ./report/flipped.jpg "Flipped Image"
-[image5]: ./report/cropped.jpg "Cropped Image"
-[image6]: ./report/track2.jpg "Track 2 video"
-[image7]:./report/center.jpg "Track 1 video"
+[image4]:  ./report/flipped.jpg "Flipped"
+[image5]: ./report/cropped.jpg "Cropped"
+[image6]: ./report/track2.jpg "Track 2"
+[image7]:./report/center.jpg "Track 1"
 
 
 ## Rubric Points
@@ -84,26 +84,26 @@ For the set of training data and selected models, dropout was found to be harmfu
 Training data was chosen to keep the vehicle driving on the road. I used four laps of center lane driving on track one.  The mouse input was used to keep the angle inputs smooth.  The left and right images were used to create corrective actions.
 
 ![lalt text][image1]<br>
-*left image*
+*Left image*
 
 ![alt text][image2]<br>
-*center image*
+*Center image*
 
 
 ![alt text][image3]<br>
-*right image*
+*Right image*
 
 
 To augment the data set, I also flipped images and angles thinking that this would add more data and prevent any left or right bias.  For example, here is a flipped version of the above center image:
 
 ![alt text][image4]<br>
-*flipped center image*
+*Flipped center image*
 
 
 After the collection process, I had 69,594 number of data points. To avoid showing extraneous information, the top 50 and bottom 20 pixels were removed. Here is the cropped version of the above center image:
 
 ![alt text][image5]<br>
-*cropped center image*
+*Cropped center image*
 
 
 I then preprocessed this data by dividing each pixel value by 255 and then subtracting 0.5 for the result to normalize the data.
@@ -117,10 +117,10 @@ I used this training data for training the model. The validation set helped dete
 The car successfully navigated track 1. Video of this is given in the video.mp4 file.  This file has been uploaded to YouTube and can be viewed by clicking on the below image.
 
 [![Track 1][image7]](https://youtu.be/vhzxwS0nGf0)<br>
-*click image to view track 1 video*
+*Click image to view track 1 video*
 
 Track 2 was much more challenging, even for a human driver. It was found that staying in the center of the track caused performance on track 1 to suffer as the edges of curves were mistaken for the center dashed lines on track 2. However, using only data from track 1, some success was achieved on track 2.  This is shown in the video_track2.mp4 file which has been uploaded to YouTube and is available by clicking on the below image.
 
 [![Track 2][image6]](https://youtu.be/EIk6GieTMG8)<br>
-*click image to view track 2 video*
+*Click image to view track 2 video*
 
