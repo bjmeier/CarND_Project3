@@ -34,7 +34,7 @@ My project includes the following files:
 - model.h5 containing a trained convolution neural network 
 - video.mp4 showing a lap around track 1
 - video_track2.mp4 showing a partial lap around track 2
-- writeup_report.md  summarizing the results
+- README.md  summarizing the results
 
 #### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
@@ -50,33 +50,49 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network that followed the NVIDIA example. 
+My model consists of a convolution neural network that followed the [NVIDIA example](https://arxiv.org/pdf/1604.07316v1.pdf "End to End Learning for Self-Driving Cars").  This acitecture was selected because it performed well in the physical world.
 
 Top 50 pixels and bottom 20 pixels are cropped from 160 x 320 images (model.py line 63)
+
 Data is normalized by dividing each pixel by 255 and then subtracting 0.5 (model.py line 64)
+
 5 x 5 convolution with a 24 layer depth and a RELU activation
+
 5 x 5 convolution with a 36 layer depth and a RELU activation
+
 5 x 5 convolution with a 48 layer depth and a RELU activation
+
 3 x 3 convolution with a 64 layer depth and a RELU activation
+
 3 x 3 convolution with a 64 layer depth and a RELU activation
+
 Flatten
+
 Fully connected layer with 100 output nodes
+
 Fully conected layer output with 50 output nodes
+
 Fully connected layer output with 10 output nodes
+
 Fully connected layer with final output node
+
 (model.py lines 65 - 75)
 
 #### 2. Attempts to reduce overfitting in the model
 
-To prevent overfitting, training was limited to two epochs. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+To prevent overfitting, the early stopping method was employed.  Because the validation errors stopped decreasing after two epochs, the number of training epochs was set to two. Page describing early stopping and other techniques used to avoid overfitting is given in a [Mathworks page](https://www.mathworks.com/help/nnet/ug/improve-neural-network-generalization-and-avoid-overfitting.html?requestedDomain=www.mathworks.com "Improve Neural Network Generalization and Avoid Overfitting")
 
 #### 3. Model parameter tuning
 
-A correction factor of 0.9 and a training length of 2 epochs were selected based on track performance.  Smaller correction factors faild to keep the car on the track. Larger correction factors caused chatter.  Dropout was found to be harmful to performance, as was adding RELU activations after the fully connected layers.
+A correction factor of 0.9 and a training length of 2 epochs were selected based on track performance.  Smaller correction factors failed to keep the car on the track. Larger correction factors caused chatter.  
+
+This correction factor was far larger than I expected.  I suspect the reason it worked so well is that the training focused on using smooth angle changes to keep the car in the center of the road.  This method likley causes the the left and right cameras to provide the equivalent of negative feedback signals to the system.  The high values place a high penalty on getting near the edges of the road and keep the car on track.
+
+For the set of training data and selected models, dropout was found to be harmful to performance, as was adding RELU activations after the fully connected layers.
 
 #### 4. Creation of the Training Set & Training Process
 
-Training data was chosen to keep the vehicle driving on the road. I used four laps of center lane driving on track one.  The left and right images were used to create corrective actions.
+Training data was chosen to keep the vehicle driving on the road. I used four laps of center lane driving on track one.  The mouse input was used to keep the angle inputs smooth.  The left and right images were used to create corrective actions.
 
 ![lalt text][image1]
 *left image*
@@ -106,7 +122,7 @@ I then preprocessed this data by dividing each pixel value by 255 and then subtr
 
 I finally randomly shuffled the data set and put 5% of the data into a validation set. 
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was two as more epochs consistantly failed to impove the validation error. I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was two as more epochs consistantly failed to impove the validation error. I used an adam optimizer so that manually training the learning rate wasn't necessary.  The test data set was replaced by on track performance.  This performance is demonstrated in the below videos.
 
 #### 5. Results
 The car successfully navigated track 1. Video of this is given in the video.mp4 file.  This file has been uploaded to YouTube and can be viewed by clicking on the below image.
@@ -114,11 +130,8 @@ The car successfully navigated track 1. Video of this is given in the video.mp4 
 [![Track 1][image7]](https://youtu.be/vhzxwS0nGf0) 
 *click image to view track 1 video*
 
-Track 2 was much more challanging, even for a human driver. It was found that staying in the center of the track caused performance on track 1 to suffer as the edges of curves were mistaken for the center dashed lines on track 2. However, using only data from track 1, some success was achieved on track 2.  This is shown in the video_track2.mp4 file which has been uploaded to YouTube and is available by clicking on the below image.
+Track 2 was much more challenging, even for a human driver. It was found that staying in the center of the track caused performance on track 1 to suffer as the edges of curves were mistaken for the center dashed lines on track 2. However, using only data from track 1, some success was achieved on track 2.  This is shown in the video_track2.mp4 file which has been uploaded to YouTube and is available by clicking on the below image.
 
 [![Track 2][image6]](https://youtu.be/EIk6GieTMG8) 
 *click image to view track 2 video*
-
-
-
 
