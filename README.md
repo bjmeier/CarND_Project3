@@ -50,7 +50,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network that followed the [NVIDIA example](https://arxiv.org/pdf/1604.07316v1.pdf "End to End Learning for Self-Driving Cars").  This acitecture was selected because it performed well in the physical world.
+My model consists of a convolution neural network that followed the [NVIDIA example](https://arxiv.org/pdf/1604.07316v1.pdf "End to End Learning for Self-Driving Cars").  This architecture was selected because it performed well in the physical world.
 
 Top 50 pixels and bottom 20 pixels are cropped from 160 x 320 images (model.py line 63)
 
@@ -80,7 +80,7 @@ Fully connected layer with final output node
 
 #### 2. Attempts to reduce overfitting in the model
 
-To prevent overfitting, the early stopping method was employed.  Because the validation errors stopped decreasing after two epochs, the number of training epochs was set to two. Page describing early stopping and other techniques used to avoid overfitting is given in a [Mathworks page](https://www.mathworks.com/help/nnet/ug/improve-neural-network-generalization-and-avoid-overfitting.html?requestedDomain=www.mathworks.com "Improve Neural Network Generalization and Avoid Overfitting")
+To prevent overfitting, the early stopping method was employed.  Because the validation errors stopped decreasing after two epochs, the number of training epochs was set to two. A description of early stopping and other techniques used to avoid overfitting is given in this [Mathworks page](https://www.mathworks.com/help/nnet/ug/improve-neural-network-generalization-and-avoid-overfitting.html?requestedDomain=www.mathworks.com "Improve Neural Network Generalization and Avoid Overfitting").
 
 #### 3. Model parameter tuning
 
@@ -94,26 +94,26 @@ For the set of training data and selected models, dropout was found to be harmfu
 
 Training data was chosen to keep the vehicle driving on the road. I used four laps of center lane driving on track one.  The mouse input was used to keep the angle inputs smooth.  The left and right images were used to create corrective actions.
 
-![lalt text][image1]
+![lalt text][image1] 
 *left image*
 
-![alt text][image2]
+![alt text][image2] 
 *center image*
 
 
-![alt text][image3]
+![alt text][image3] 
 *right image*
 
 
 To augment the data set, I also flipped images and angles thinking that this would add more data and prevent any left or right bias.  For example, here is a flipped version of the above center image:
 
-![alt text][image4]
+![alt text][image4] 
 *flipped center image*
 
 
 After the collection process, I had 69,594 number of data points. To avoid showing extraneous information, the top 50 and bottom 20 pixels were removed. Here is the cropped version of the above center image:
 
-![alt text][image5]
+![alt text][image5] 
 *cropped center image*
 
 
@@ -122,10 +122,14 @@ I then preprocessed this data by dividing each pixel value by 255 and then subtr
 
 I finally randomly shuffled the data set and put 5% of the data into a validation set. 
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was two as more epochs consistantly failed to impove the validation error. I used an adam optimizer so that manually training the learning rate wasn't necessary.  The test data set was replaced by on track performance.  This performance is demonstrated in the below videos.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. As discussed abobve, the ideal number of epochs is two as additional training did not improve the validation error. I used an adam optimizer so that manually training the learning rate wasn't necessary.  The test data set was replaced by on track performance.  This performance is demonstrated in the below videos.
 
 #### 5. Results
 The car successfully navigated track 1. Video of this is given in the video.mp4 file.  This file has been uploaded to YouTube and can be viewed by clicking on the below image.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=vhzxwS0nGf0
+" target="_blank"><img src="http://img.youtube.com/vi/vhzxwS0nGf0E/0.jpg" 
+alt="track 1 viceo" width="240" height="180" border="10" /></a>
 
 [![Track 1][image7]](https://youtu.be/vhzxwS0nGf0) 
 *click image to view track 1 video*
