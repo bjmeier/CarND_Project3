@@ -52,29 +52,18 @@ The model.py file contains the code for training and saving the convolution neur
 
 My model consists of a convolution neural network that followed the [NVIDIA example](https://arxiv.org/pdf/1604.07316v1.pdf "End to End Learning for Self-Driving Cars").  This architecture was selected because it performed well in the physical world.
 
-Top 50 pixels and bottom 20 pixels are cropped from 160 x 320 images (model.py line 63)
-
-Data is normalized by dividing each pixel by 255 and then subtracting 0.5 (model.py line 64)
-
-5 x 5 convolution with a 24 layer depth and a RELU activation
-
-5 x 5 convolution with a 36 layer depth and a RELU activation
-
-5 x 5 convolution with a 48 layer depth and a RELU activation
-
-3 x 3 convolution with a 64 layer depth and a RELU activation
-
-3 x 3 convolution with a 64 layer depth and a RELU activation
-
-Flatten
-
-Fully connected layer with 100 output nodes
-
-Fully conected layer output with 50 output nodes
-
-Fully connected layer output with 10 output nodes
-
-Fully connected layer with final output node
+Top 50 pixels and bottom 20 pixels are cropped from 160 x 320 images (model.py line 63)<br>
+Data is normalized by dividing each pixel by 255 and then subtracting 0.5 (model.py line 64)<br>
+5 x 5 convolution with a 24 layer depth and a RELU activation<br>
+5 x 5 convolution with a 36 layer depth and a RELU activation<br>
+5 x 5 convolution with a 48 layer depth and a RELU activation<br>
+3 x 3 convolution with a 64 layer depth and a RELU activation<br>
+3 x 3 convolution with a 64 layer depth and a RELU activation<br>
+Flatten<br>
+Fully connected layer with 100 output nodes<br>
+Fully conected layer output with 50 output nodes<br>
+Fully connected layer output with 10 output nodes<br>
+Fully connected layer with final output node<br>
 
 (model.py lines 65 - 75)
 
@@ -107,13 +96,13 @@ Training data was chosen to keep the vehicle driving on the road. I used four la
 
 To augment the data set, I also flipped images and angles thinking that this would add more data and prevent any left or right bias.  For example, here is a flipped version of the above center image:
 
-![alt text][image4] 
+![alt text][image4]<br>
 *flipped center image*
 
 
 After the collection process, I had 69,594 number of data points. To avoid showing extraneous information, the top 50 and bottom 20 pixels were removed. Here is the cropped version of the above center image:
 
-![alt text][image5] 
+![alt text][image5]<br>
 *cropped center image*
 
 
@@ -127,15 +116,11 @@ I used this training data for training the model. The validation set helped dete
 #### 5. Results
 The car successfully navigated track 1. Video of this is given in the video.mp4 file.  This file has been uploaded to YouTube and can be viewed by clicking on the below image.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=vhzxwS0nGf0
-" target="_blank"><img src="http://img.youtube.com/vi/vhzxwS0nGf0/0.jpg" 
-alt="track 1 video" width="240" height="180" border="10" /></a>
-
-[![Track 1][image7]](https://youtu.be/vhzxwS0nGf0) 
+[![Track 1][image7]](https://youtu.be/vhzxwS0nGf0)<br>
 *click image to view track 1 video*
 
 Track 2 was much more challenging, even for a human driver. It was found that staying in the center of the track caused performance on track 1 to suffer as the edges of curves were mistaken for the center dashed lines on track 2. However, using only data from track 1, some success was achieved on track 2.  This is shown in the video_track2.mp4 file which has been uploaded to YouTube and is available by clicking on the below image.
 
-[![Track 2][image6]](https://youtu.be/EIk6GieTMG8) 
+[![Track 2][image6]](https://youtu.be/EIk6GieTMG8)<br>
 *click image to view track 2 video*
 
